@@ -4,9 +4,10 @@ class Report(models.Model):
     created = models.DateTimeField(auto_now_add=True, null=True)
     modified = models.DateTimeField(auto_now=True, null=True)
 
-    date = models.DateTimeField()
+    date = models.DateField()
     text = models.CharField(max_length=255)
     rating = models.PositiveIntegerField()
+    user = models.ForeignKey('lifegraph.LifegraphUser', blank=True, null=True)
 
     def __unicode__(self):
-        return self.date + ': ' + self.rating
+        return str(self.date) + ': ' + str(self.rating)

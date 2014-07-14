@@ -27,6 +27,9 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# Use custom user model
+AUTH_USER_MODEL = 'lifegraph.LifegraphUser'
+
 # Application definition
 
 INSTALLED_APPS = (
