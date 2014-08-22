@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Lifegraph</title>
+    <script src="http://fb.me/react-0.11.1.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script type="text/jsx">
+      /** @jsx React.DOM */
+      var LifeBox = React.createClass({
+        render: function() {
+          return (
+            <div class="lifeBox">
+              <LifeGraph />
+              <LifeUpdateForm />
+            </div>
+          );
+        }
+      });
+      var LifeGraph = React.createClass({
+        render: function() {
+          return (
+            <div class="lifeGraph">
+              <h1>Hello world!</h1>
+            </div>
+          );
+        },
+      });
+      var LifeUpdateForm = React.createClass({
+        handleSubmit: function() {
+          return false;
+        },
+        render: function() {
+          return (
+            <form className="lifeUpdateForm" onSubmit={this.handleSubmit}>
+              <label>Rate your day:</label><br />
+              <input type="radio" name="rating" value="-1" />-1<br />
+              <input type="radio" name="rating" value="0" />0<br />
+              <input type="radio" name="rating" value="1" />1<br />
+              <input type="submit" value="Submit" />
+            </form>
+          );
+        },
+      });
+      React.renderComponent(
+        <LifeBox />,
+        document.getElementById('content')
+      );
+    </script>
+  </body>
+</html>

@@ -7,6 +7,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'lifegraph.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
+    url(r'^$', 'lifegraph.views.index'),
 
     url(r'^admin/', include(admin.site.urls)),
 )
