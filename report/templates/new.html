@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Lifegraph - New Report</title>
+  </head>
+  <body>
+    <form action='/report/' method='post'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type='submit' value='Submit' />
+    </form>
+  </body>
+</html>
